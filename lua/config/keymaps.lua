@@ -7,3 +7,7 @@ function insertFullPath()
   vim.fn.setreg("+", filepath) -- write to clippoard
 end
 vim.keymap.set("n", "<leader>pc", insertFullPath, { noremap = true, silent = true, desc = "Yank Relative Path" })
+--local gitsigns = require("gitsigns")
+--vim.keymap.set("n", "<leader>gb", function()
+--  gitsigns.blame_line({ full = true })
+--end, { desc = "Blame Line" })

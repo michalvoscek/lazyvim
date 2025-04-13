@@ -3,6 +3,7 @@ return {
   opts = {
     inlay_hints = { enabled = false },
     servers = {
+      tailwindcss = {},
       ts_ls = {
         enabled = false,
       },
