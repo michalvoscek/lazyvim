@@ -8,7 +8,7 @@ return {
           ignored = true,
         },
         files = {
-          hidden = false,
+          hidden = true,
           ignored = false,
           -- exclude = {
           -- "**/.git/*",
