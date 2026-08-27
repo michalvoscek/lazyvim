@@ -17,3 +17,11 @@ vim.keymap.set("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" 
 vim.keymap.set("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 vim.keymap.set("v", "<A-Down>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 vim.keymap.set("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+local function paste_no_clobber()
+  local reg = vim.fn.getreg('"', 1)
+  local regtype = vim.fn.getregtype('"')
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("p", true, false, true), "nx", false)
+  vim.fn.setreg('"', reg, regtype)
+end
+vim.keymap.set("x", "p", paste_no_clobber, { desc = "Paste without clobbering register" })
+vim.keymap.set("x", "P", paste_no_clobber, { desc = "Paste without clobbering register" })
