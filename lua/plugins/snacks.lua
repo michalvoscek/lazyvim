@@ -6,6 +6,23 @@ return {
         explorer = {
           hidden = true,
           ignored = true,
+          win = {
+            input = {
+              keys = {
+                ["<Esc>"] = false,
+              },
+            },
+            list = {
+              keys = {
+                ["<Esc>"] = false,
+              },
+            },
+            preview = {
+              keys = {
+                ["<Esc>"] = false,
+              },
+            },
+          },
         },
         files = {
           hidden = true,
