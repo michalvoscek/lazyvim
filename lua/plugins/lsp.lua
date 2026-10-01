@@ -3,7 +3,13 @@ return {
   opts = {
     inlay_hints = { enabled = false },
     servers = {
-      pyright = {},
+      pyright = {
+        capabilities = {
+          window = {
+            workDoneProgress = false,
+          },
+        },
+      },
       tailwindcss = {},
       ts_ls = {
         enabled = false,
